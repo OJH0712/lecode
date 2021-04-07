@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+  <script>
+let s = "krrgw"
+let t = "zjxss"
+let cost = 19
+
+var equalSubstring = function(s, t, maxCost) {
+    let arr = [];
+    for(let i= 0; i<s.length;i++){
+        arr[i] = Math.abs(s[i].charCodeAt()-t[i].charCodeAt())
+    }
+    let k = 0 ,max =0 ;
+    for(let i = 0;i<arr.length;i++){
+        maxCost = maxCost - arr[i];
+        k++
+        if(maxCost<0){
+            maxCost += arr[i-k+1]
+            k--
+        }
+    }
+    return k
+};
+// var equalSubstring = function(s, t, maxCost) {
+//     let n = s.length
+//     let diffs = Array(n).fill(0)
+//     for(let i = 0; i < n; i++){
+//         diffs[i] = Math.abs( s[i].charCodeAt() - t[i].charCodeAt() )
+//     }
+//     let k = 0, max = 0
+//     for(let i = 0; i < n; i++){
+//         maxCost -= diffs[i]
+//         k++
+//         if (maxCost < 0) {
+//             maxCost += diffs[i - k + 1]
+//             k--
+//         }
+//         max = Math.max(max, k)
+//     }
+//     return max
+// };
+
+console.log(equalSubstring(s,t,cost))
+  </script>
+</html>

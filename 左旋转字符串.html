@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+  <script>
+    let s = "abcdefg";
+    let k = 2;
+    var reverseLeftWords = function (s, n) {
+        let temp = s.slice(0,n);
+        let arr = s.slice(n,s.length);
+        return arr+temp
+
+    };
+    console.log(reverseLeftWords(s,k))
+  </script>
+</html>

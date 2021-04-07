@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    let allowed = "ab"
+    let words = ["ad","bd","aaab","baa","badab"]
+    var countConsistentStrings = function(allowed, words) {
+        let counts = 0 ;
+        for(let i=0 ;i<words.length;i++){
+            let allin = words[i].split("").every((item) => {
+                return allowed.indexOf(item) !== -1
+            }
+            )
+            if(allin){
+                counts++
+            }
+        }
+        return counts
+};
+
+// var countConsistentStrings = function (allowed, words) {
+//   var count = 0;
+//   for (var i = 0; i < words.length; i++) {
+//     console.log(words[i].split(""))
+//     var allIn = words[i].split('').every(item => allowed.indexOf(item) !== -1);
+//     console.log(allIn)
+//     allIn && count++;
+//   }
+//   return count;
+// };
+console.log(countConsistentStrings(allowed,words))
+</script>
+</html>

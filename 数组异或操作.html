@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    n = 5, start = 0
+    var xorOperation = function(n, start) {
+    let ans = 0;
+    
+    for(let i = 0; i < n; i++) {
+        let elem = start + 2 * i;
+        ans = ans ^ elem;
+    }
+    
+    return ans;
+};
+console.log(xorOperation(5,0))
+</script>
+</html>

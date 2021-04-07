@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+  <script>
+    let jewels = "aA";
+    let stones = "aAAbbbb";
+    var numJewelsInStones = function (jewels, stones) {
+      const set = new Set();
+      for(const s of jewels){
+            set.add(s)
+      }
+      let counts = 0;
+      for (let s of stones ) {
+        if (set.has(s)) {
+          counts++;
+        }
+      }
+
+      return counts;
+    };
+    // var numJewelsInStones = function(J, S) {
+    // const set = new Set();
+    // for(const s of J) {
+    //     set.add(s);
+    // }
+    // let ans = 0;
+    // for(const s of S) {
+    //     if(set.has(s)){
+    //         ans++;
+    //     }
+    // }
+    // return ans;
+// };
+    console.log(numJewelsInStones(jewels, stones));
+  </script>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+  <script>
+    // 示例 1：
+
+    // 输入：nums = [1,2,3,4]
+    // 输出：[1,3,6,10]
+    // 解释：动态和计算过程为 [1, 1+2, 1+2+3, 1+2+3+4] 。
+
+    let nums = [1, 2, 3, 4];
+    // var runningSum = function (nums) {
+    //   let temp = nums;
+    //   let sum = 0;
+    //   let arr = [];
+    //   for (let i in nums) {
+    //     if (i == 0) {
+    //       sum = temp[i];
+    //     }
+    //     else{
+    //         sum = temp[i] + temp[i - 1];
+    //     }
+    //     arr.push(sum)
+    //   }
+    //   return arr
+    // };
+    var runningSum = function (nums) {
+      for (let i = 1; i < nums.length; i++) {
+        nums[i] += nums[i - 1];
+      }
+      return nums;
+    };
+    console.log(runningSum(nums));
+  </script>
+</html>
